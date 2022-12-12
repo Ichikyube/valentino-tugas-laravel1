@@ -61,10 +61,7 @@
 @endphp
 <div class="container mx-auto flex flex-wrap justify-between">
         @foreach ($users as $key => $user)
-
             @include('components.cards.biodata')
-
-
         @endforeach
 </div>
 @endsection

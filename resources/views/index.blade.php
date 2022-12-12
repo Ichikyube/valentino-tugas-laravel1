@@ -61,7 +61,9 @@
 @endphp
 <div class="container mx-auto flex flex-wrap justify-between">
         @foreach ($users as $key => $user)
-            @include('components.cards.biodata')
+            @if($user['active'] == true && $user['role'] == "admin")
+                @include('components.cards.biodata')
+            @endif
         @endforeach
 </div>
 @endsection

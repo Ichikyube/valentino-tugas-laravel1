@@ -59,11 +59,9 @@
         "role" => "admin"
     ]
 @endphp
-<div class="container mx-auto flex flex-wrap justify-between">
+<div class="container flex flex-wrap justify-between mx-auto">
         @foreach ($users as $key => $user)
-            @if($user['active'] == true && $user['role'] == "admin")
-                @include('components.cards.biodata')
-            @endif
+            @includeWhen($user['active'] == $filter['active'] && $user['role'] == $filter['role'],'components.cards.biodata')
         @endforeach
 </div>
 @endsection
